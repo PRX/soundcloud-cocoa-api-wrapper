@@ -45,8 +45,7 @@ typedef enum {
 }
 
 @property (nonatomic, assign) SCResponseFormat responseFormat;
-@property (nonatomic, readonly, getter=isAuthenticated) BOOL authenticated;	// this might change dynamically. Not observable, atm
-
+@property (nonatomic, readonly, getter=isAuthenticated) BOOL authenticated;	// this might change dynamically. Not observable, atm 
 
 /*!
  * initialize the api object
@@ -54,6 +53,9 @@ typedef enum {
 - (id)initWithDelegate:(id<SCSoundCloudAPIDelegate>)delegate
 authenticationDelegate:(id<SCSoundCloudAPIAuthenticationDelegate>)authDelegate
 	  apiConfiguration:(SCSoundCloudAPIConfiguration *)configuration;
+
+- (id)initWithDelegate:(id<SCSoundCloudAPIDelegate>)aDelegate
+		authentication:(SCSoundCloudAPIAuthentication *)anAuthentication;
 
 /*!
  * pass along an existing api object
