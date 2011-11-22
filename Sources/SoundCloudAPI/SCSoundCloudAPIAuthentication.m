@@ -106,6 +106,7 @@
 
 - (void)resetAuthentication;
 {
+    [oauthClient.accessToken removeFromDefaultKeychainWithServiceProviderName:[configuration.accessTokenURL host]]; 
 	oauthClient.accessToken = nil;
 	
 #if TARGET_OS_IPHONE
